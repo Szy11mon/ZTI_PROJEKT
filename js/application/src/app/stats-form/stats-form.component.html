@@ -65,9 +65,10 @@
       </div>
       <div class="form-group">
         <label for="win">Zwycięstwo</label>
-        <input type="text" [(ngModel)]="stats.win" class="form-control" id="win" name="win" placeholder="Y = Zwycięstwo, N = Porażka"
-          required #win="ngModel">
-        <div [hidden]="!win.pristine" class="alert alert-danger">Wynik meczu jest wymagany</div>
+        <select id="win" name="win" [(ngModel)]="stats.win" class="form-control">
+          <option value="T">Tak</option>
+          <option value="N">Nie</option>
+        </select>
       </div>
       <button type="submit" [disabled]="!statsForm.form.valid" class="btn btn-info">Dodaj</button>
     </form>
