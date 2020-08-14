@@ -12,7 +12,7 @@ import java.util.List;
 
 @RequestMapping("api/classes")
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://neo4j-project.herokuapp.com/")
 public class ClassesController {
 
     private final ClassesService classesService;

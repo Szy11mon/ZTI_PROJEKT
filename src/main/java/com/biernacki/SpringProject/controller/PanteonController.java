@@ -12,7 +12,7 @@ import java.util.List;
 
 @RequestMapping("api/panteons")
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://neo4j-project.herokuapp.com/")
 public class PanteonController {
 
     private final PanteonService panteonService;
