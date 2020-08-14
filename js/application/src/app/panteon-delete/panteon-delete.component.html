@@ -1,0 +1,15 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #panteonForm="ngForm">
+      <div class="form-group">
+        <label for="name">Wybierz Panteon do usunięcia</label>
+        <select id="name" name="name" [(ngModel)]="name" class="form-control">
+          <option *ngFor="let panteon of panteons" [ngValue]="panteon.name"> 
+            {{panteon.name}}
+          </option>
+        </select>
+      </div>
+      <button type="submit" [disabled]="!panteonForm.form.valid" class="btn btn-info">Usuń</button>
+    </form>
+  </div>
+</div>

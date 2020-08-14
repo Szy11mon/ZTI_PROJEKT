@@ -1,0 +1,27 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #modeForm="ngForm">
+      <div class="form-group">
+        <label for="name">Nazwa</label>
+        <input type="text" [(ngModel)]="mode.name" class="form-control" id="name" name="name" placeholder="Wybierz nazwę trybu"
+          required #name="ngModel">
+      </div>
+      <div [hidden]="!name.pristine" class="alert alert-danger">Nazwa jest wymagana</div>
+      <div class="form-group">
+        <label for="panteon">Wybierz Panteon</label>
+        <select id="panteon" name="panteon" [(ngModel)]="mode.panteon" class="form-control">
+          <option *ngFor="let panteon of panteons" [ngValue]="panteon.name"> 
+            {{panteon.name}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="playersNumber">Liczba Graczy</label>
+        <input type="number" [(ngModel)]="mode.playersNumber" class="form-control" id="playersNumber" name="playersNumber" placeholder="Wybierz liczbę graczy"
+          required #playersNumber="ngModel">
+        <div [hidden]="!playersNumber.pristine" class="alert alert-danger">Liczba graczy jest wymagana</div>
+      </div>
+      <button type="submit" [disabled]="!modeForm.form.valid" class="btn btn-info">Dodaj</button>
+    </form>
+  </div>
+</div>

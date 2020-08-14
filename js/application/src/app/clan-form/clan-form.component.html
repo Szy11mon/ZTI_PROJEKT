@@ -1,0 +1,13 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #clanForm="ngForm">
+      <div class="form-group">
+        <label for="name">Nazwa Klanu</label>
+        <input type="text" [(ngModel)]="clan.name" class="form-control" id="name" name="name" placeholder="Podaj Nazwę"
+          required #name="ngModel">
+      </div>
+      <div [hidden]="!name.pristine" class="alert alert-danger">Nazwa jest wymagana</div>
+      <button type="submit" [disabled]="!clanForm.form.valid" class="btn btn-info">Dodaj</button>
+    </form>
+  </div>
+</div>

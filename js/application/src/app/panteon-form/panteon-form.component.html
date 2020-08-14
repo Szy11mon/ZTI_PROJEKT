@@ -1,0 +1,19 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #panteonForm="ngForm">
+      <div class="form-group">
+        <label for="name">Nazwa</label>
+        <input type="text" [(ngModel)]="panteon.name" class="form-control" id="name" name="name" placeholder="Wprowadź nazwę panteonu"
+          required #name="ngModel">
+      </div>
+      <div [hidden]="!name.pristine" class="alert alert-danger">Nazwa jest wymagana</div>
+      <div class="form-group">
+        <label for="dateAdded">Data Dodania</label>
+        <input type="Date" [(ngModel)]="panteon.dateAdded" class="form-control" id="dateAdded" name="dateAdded" placeholder="Wprowadź datę dodania"
+          required #dateAdded="ngModel">
+        <div [hidden]="!dateAdded.pristine" class="alert alert-danger">Data dodania jest wymagana</div>
+      </div>
+      <button type="submit" [disabled]="!panteonForm.form.valid" class="btn btn-info">Dodaj</button>
+    </form>
+  </div>
+</div>

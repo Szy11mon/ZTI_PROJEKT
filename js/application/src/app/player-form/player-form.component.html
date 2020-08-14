@@ -1,0 +1,27 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #playerForm="ngForm">
+      <div class="form-group">
+        <label for="login">Login Gracza</label>
+        <input type="text" [(ngModel)]="player.login" class="form-control" id="login" name="login" placeholder="Podaj login"
+          required #login="ngModel">
+      </div>
+      <div [hidden]="!login.pristine" class="alert alert-danger">Login jest wymagany</div>
+      <div class="form-group">
+        <label for="clan">Wybierz Klan</label>
+        <select id="clan" name="clan" [(ngModel)]="player.clan" class="form-control">
+          <option *ngFor="let clan of clans" [ngValue]="clan.name"> 
+            {{clan.name}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="dateJoined">Data Dołączenia</label>
+        <input type="Date" [(ngModel)]="player.dateJoined" class="form-control" id="dateJoined" name="dateJoined" placeholder="Wybierz datę dołączenia"
+          required #dateJoined="ngModel">
+        <div [hidden]="!dateJoined.pristine" class="alert alert-danger">Data dołączenia jest wymagana</div>
+      </div>
+      <button type="submit" [disabled]="!playerForm.form.valid" class="btn btn-info">Dodaj</button>
+    </form>
+  </div>
+</div>

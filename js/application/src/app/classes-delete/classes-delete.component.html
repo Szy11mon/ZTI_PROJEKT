@@ -1,0 +1,15 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #classesForm="ngForm">
+      <div class="form-group">
+        <label for="name">Wybierz klasę do usunięcia</label>
+        <select id="name" name="name" [(ngModel)]="name" class="form-control">
+          <option *ngFor="let class of classes" [ngValue]="class.name"> 
+            {{class.name}}
+          </option>
+        </select>
+      </div>
+      <button type="submit" [disabled]="!classesForm.form.valid" class="btn btn-info">Usuń</button>
+    </form>
+  </div>
+</div>

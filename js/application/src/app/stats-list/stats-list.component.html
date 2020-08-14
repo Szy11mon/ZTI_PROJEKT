@@ -1,0 +1,36 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Gracz</th>
+          <th scope="col">Tryb</th>
+          <th scope="col">Postać</th>
+          <th scope="col">Klan</th>
+          <th scope="col">Zabójstwa</th>
+          <th scope="col">Śmierci</th>
+          <th scope="col">Asysty</th>
+          <th scope="col">Złoto</th>
+          <th scope="col">Obrażenia</th>
+          <th scope="col">Zwycięstwo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stat of stats">
+          <td>{{ stat.id }}</td>
+          <td>{{ stat.player }}</td>
+          <td>{{ stat.mode }}</td>
+          <td>{{ stat.character }}</td>
+          <td>{{ stat.clan }}</td>
+          <td>{{ stat.kills }}</td>
+          <td>{{ stat.deaths }}</td>
+          <td>{{ stat.assists }}</td>
+          <td>{{ stat.gold }}</td>
+          <td>{{ stat.damage }}</td>
+          <td>{{ stat.win }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

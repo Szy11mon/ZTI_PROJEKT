@@ -1,0 +1,24 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nazwa</th>
+          <th scope="col">Panteon</th>
+          <th scope="col">Klasa</th>
+          <th scope="col">Data Dodania</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let character of characters">
+          <td>{{ character.id }}</td>
+          <td>{{ character.name }}</td>
+          <td>{{ character.panteon }}</td>
+          <td>{{ character.classname }}</td>
+          <td>{{ character.dateAdded }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

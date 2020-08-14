@@ -1,0 +1,75 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #statsForm="ngForm">
+      <div class="form-group">
+        <label for="clan">Wybierz Gracza</label>
+        <select id="player" name="player" [(ngModel)]="stats.player" class="form-control">
+          <option *ngFor="let player of players" [ngValue]="player.login"> 
+            {{player.login}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="mode">Wybierz Tryb Gry</label>
+        <select id="mode" name="mode" [(ngModel)]="stats.mode" class="form-control">
+          <option *ngFor="let mode of modes" [ngValue]="mode.name"> 
+            {{mode.name}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="character">Wybierz Postać</label>
+        <select id="character" name="character" [(ngModel)]="stats.character" class="form-control">
+          <option *ngFor="let character of characters" [ngValue]="character.name"> 
+            {{character.name}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="clan">Wybierz Klan</label>
+        <select id="clan" name="clan" [(ngModel)]="stats.clan" class="form-control">
+          <option *ngFor="let clan of clans" [ngValue]="clan.name"> 
+            {{clan.name}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="kills">Ilość Zabójstw</label>
+        <input type="number" [(ngModel)]="stats.kills" class="form-control" id="kills" name="kills" placeholder="Podaj ilość zabójstw"
+          required #kills="ngModel">
+        <div [hidden]="!kills.pristine" class="alert alert-danger">Ilość zabójstw jest wymagana</div>
+      </div>
+      <div class="form-group">
+        <label for="deaths">Ilość Śmierci</label>
+        <input type="number" [(ngModel)]="stats.deaths" class="form-control" id="deaths" name="deaths" placeholder="Podaj ilość śmierci"
+          required #deaths="ngModel">
+        <div [hidden]="!deaths.pristine" class="alert alert-danger">Ilość śmierci jest wymagana</div>
+      </div>
+      <div class="form-group">
+        <label for="assists">Ilość Asyst</label>
+        <input type="number" [(ngModel)]="stats.assists" class="form-control" id="assists" name="assists" placeholder="Podaj ilość asyst"
+          required #assists="ngModel">
+        <div [hidden]="!assists.pristine" class="alert alert-danger">Ilość asyst jest wymagana</div>
+      </div>
+      <div class="form-group">
+        <label for="gold">Ilość Złota</label>
+        <input type="number" [(ngModel)]="stats.gold" class="form-control" id="gold" name="gold" placeholder="Podaj ilość złota"
+          required #gold="ngModel">
+        <div [hidden]="!gold.pristine" class="alert alert-danger">Ilość złota jest wymagana</div>
+      </div>
+      <div class="form-group">
+        <label for="damage">Zadane Obrażenia</label>
+        <input type="number" [(ngModel)]="stats.damage" class="form-control" id="damage" name="damage" placeholder="Podaj ilość zadanych obrażeń"
+          required #damage="ngModel">
+        <div [hidden]="!damage.pristine" class="alert alert-danger">Ilość obrażeń jest wymagana</div>
+      </div>
+      <div class="form-group">
+        <label for="win">Zwycięstwo</label>
+        <input type="text" [(ngModel)]="stats.win" class="form-control" id="win" name="win" placeholder="Y = Zwycięstwo, N = Porażka"
+          required #win="ngModel">
+        <div [hidden]="!win.pristine" class="alert alert-danger">Wynik meczu jest wymagany</div>
+      </div>
+      <button type="submit" [disabled]="!statsForm.form.valid" class="btn btn-info">Dodaj</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #characterForm="ngForm">
+      <div class="form-group">
+        <label for="panteon">Wybierz Panteon</label>
+        <select id="panteon" name="panteon" [(ngModel)]="character.panteon" class="form-control">
+          <option *ngFor="let panteon of panteons" [ngValue]="panteon.name"> 
+            {{panteon.name}}
+          </option>
+        </select>
+      </div>
+      <!-- <div [hidden]="!panteon.pristine" class="alert alert-danger">Nazwa panteonu jest wymagana</div> -->
+      <div class="form-group">
+        <label for="classname">Wybierz Klasę</label>
+        <select id="classname" name="classname" [(ngModel)]="character.classname" class="form-control">
+          <option *ngFor="let class of classes" [ngValue]="class.name"> 
+            {{class.name}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="name">Nazwa</label>
+        <input type="text" [(ngModel)]="character.name" class="form-control" id="name" name="name" placeholder="Podaj nazwę postaci"
+          required #name="ngModel">
+        <div [hidden]="!name.pristine" class="alert alert-danger">Nazwa postaci jest wymagana</div>
+      </div>
+      <div class="form-group">
+        <label for="dateAdded">Data Dodania</label>
+        <input type="Date" [(ngModel)]="character.dateAdded" class="form-control" id="dateAdded" name="dateAdded" placeholder="Enter class dateAdded"
+          required #dateAdded="ngModel">
+        <div [hidden]="!dateAdded.pristine" class="alert alert-danger">Date Added is required</div>
+      </div>
+      <button type="submit" [disabled]="!characterForm.form.valid" class="btn btn-info">Dodaj</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nazwa</th>
+          <th scope="col">Panteon</th>
+          <th scope="col">Liczba Graczy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mode of modes">
+          <td>{{ mode.id }}</td>
+          <td>{{ mode.name }}</td>
+          <td>{{ mode.panteon }}</td>
+          <td>{{ mode.playersNumber }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

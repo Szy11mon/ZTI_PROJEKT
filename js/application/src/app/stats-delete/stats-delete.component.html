@@ -1,0 +1,15 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #statsForm="ngForm">
+      <div class="form-group">
+        <label for="statsID">Wybierz ID Meczu Do Usunięcia</label>
+        <select id="statsID" name="statsID" [(ngModel)]="statsID" class="form-control">
+          <option *ngFor="let stat of stats" [ngValue]="stat.id"> 
+            {{stat.id}}
+          </option>
+        </select>
+      </div>
+      <button type="submit" [disabled]="!statsForm.form.valid" class="btn btn-info">Usuń</button>
+    </form>
+  </div>
+</div>

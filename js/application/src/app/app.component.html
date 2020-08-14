@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-dark my-5">
+        <div class="card-body">
+          <h2 class="card-title text-center text-white py-2">{{ title }}</h2>
+          <ul class="text-center list-inline py-1">
+            <li class="list-inline-item"><a routerLink="/panteons" class="btn btn-info"> Lista Panteonów</a></li>
+            <li class="list-inline-item"><a routerLink="/classes" class="btn btn-info"> Lista Klas</a></li>
+            <li class="list-inline-item"><a routerLink="/modes" class="btn btn-info"> Lista Trybów Gry</a></li>
+            <li class="list-inline-item"><a routerLink="/characters" class="btn btn-info">Lista Postaci</a></li>
+            <li class="list-inline-item"><a routerLink="/players" class="btn btn-info">Lista Graczy</a></li>
+            <li class="list-inline-item"><a routerLink="/clans" class="btn btn-info">Lista Klanów</a></li>
+            <li class="list-inline-item"><a routerLink="/stats" class="btn btn-info">Lista Statystyk</a></li>
+<!--             <select (change)="routeToLink()" id="department" name="department" [(ngModel)]="selectedNavLink" class="form-control">
+        <option *ngFor="let link of navLinks" [ngValue]="link"> 
+          {{link.label}}
+        </option>
+      </select> -->
+          </ul>
+          <ul class="text-center list-inline py-1">
+            <li class="list-inline-item"><a routerLink="/addpanteon" class="btn btn-info">Dodaj Panteon</a></li>
+            <li class="list-inline-item"><a routerLink="/addclasses" class="btn btn-info">Dodaj Klasę</a></li>
+            <li class="list-inline-item"><a routerLink="/addmode" class="btn btn-info">Dodaj Tryb Gry</a></li>
+            <li class="list-inline-item"><a routerLink="/addcharacter" class="btn btn-info">Dodaj Postać</a></li>
+            <li class="list-inline-item"><a routerLink="/addplayer" class="btn btn-info">Dodaj Gracza</a></li>
+            <li class="list-inline-item"><a routerLink="/addclan" class="btn btn-info">Dodaj Klan</a></li>
+            <li class="list-inline-item"><a routerLink="/addstats" class="btn btn-info">Dodaj Statystyki</a></li>
+          </ul>
+          <ul class="text-center list-inline py-1">
+            <li class="list-inline-item"><a routerLink="/deletepanteon" class="btn btn-info">Usuń Panteon</a></li>
+            <li class="list-inline-item"><a routerLink="/deleteclasses" class="btn btn-info">Usuń Klasę</a></li>
+            <li class="list-inline-item"><a routerLink="/deletemode" class="btn btn-info">Usuń Tryb Gry</a></li>
+            <li class="list-inline-item"><a routerLink="/deletecharacter" class="btn btn-info">Usuń Postać</a></li>
+            <li class="list-inline-item"><a routerLink="/deleteplayer" class="btn btn-info">Usuń Gracza</a></li>
+            <li class="list-inline-item"><a routerLink="/deleteclan" class="btn btn-info">Usuń Klan</a></li>
+            <li class="list-inline-item"><a routerLink="/deletestats" class="btn btn-info">Usuń Statystyki</a></li>
+          </ul>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
