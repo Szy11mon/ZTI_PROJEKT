@@ -13,7 +13,7 @@ import java.util.List;
 
 @RequestMapping("api/mode")
 @RestController
-@CrossOrigin(origins = "https://neo4j-project.herokuapp.com/")
+@CrossOrigin(origins = "https://neo4j-project.herokuapp.com")
 public class ModeController {
 
     private final ModeService modeService;

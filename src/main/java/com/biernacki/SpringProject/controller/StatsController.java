@@ -13,7 +13,7 @@ import java.util.List;
 
 @RequestMapping("api/stats")
 @RestController
-@CrossOrigin(origins = "https://neo4j-project.herokuapp.com/")
+@CrossOrigin(origins = "https://neo4j-project.herokuapp.com")
 public class StatsController {
 
     private final StatsService statsService;

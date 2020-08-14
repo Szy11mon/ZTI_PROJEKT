@@ -12,7 +12,7 @@ import java.util.List;
 
 @RequestMapping("api/clan")
 @RestController
-@CrossOrigin(origins = "https://neo4j-project.herokuapp.com/")
+@CrossOrigin(origins = "https://neo4j-project.herokuapp.com")
 public class ClanController {
 
     private final ClanService clanService;
